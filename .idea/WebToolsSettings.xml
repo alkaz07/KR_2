@@ -2,5 +2,7 @@
 <project version="4">
   <component name="WebToolsSettings">
     <option name="autoDetectRun" value="true" />
+    <option name="packageManagerPath" value="D:\Программы\Node\npm.cmd" />
+    <option name="runtimePath" value="D:\Программы\Node\node.exe" />
   </component>
 </project>

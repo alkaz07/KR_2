@@ -1,0 +1,49 @@
+package belova;
+import java.util.Scanner;
+
+public class BelovaTask4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Сколько орешков на дереве? ");
+        int n = sc.nextInt();
+
+        Squirrel squirrel = new Squirrel();
+        Tree tree = new Tree();
+
+        Nut[] nuts = tree.growNutArray(n);
+        squirrel.gatherNuts(nuts);
+    }
+}
+
+class Nut {
+    public double getWeight() {
+        return 12.5;
+    }
+}
+
+class Tree {
+    public Nut[] growNutArray(int amountNuts) {
+        Nut[] nuts = new Nut[amountNuts];
+        for (int i = 0; i < amountNuts; i++) {
+            nuts[i] = new Nut();
+        }
+
+        return nuts;
+    }
+}
+
+class Squirrel {
+    public void gatherNuts(Nut[] nuts) {
+        double totalWeight = 0;
+        for (int i = 0; i < nuts.length; i++) {
+            Nut nut = nuts[i];
+
+            System.out.println("Ура, еще орех!");
+            totalWeight += nut.getWeight();
+        }
+
+        System.out.println("Белочка насобирала "
+                + totalWeight + " грамм орешков");
+    }
+
+}
