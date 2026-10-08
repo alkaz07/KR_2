@@ -1,3 +1,22 @@
 1. 013501340133015501540153
 
 2.
+
+3. public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Как тебя зовут? ");
+        String name = sc.nextLine();
+        //String last;
+        if (!name.isEmpty()) {
+            char last = name.charAt(name.length() - 1);
+            // System.out.println("последняя буква: " + last);
+               if (last == 'а' || last == 'я' || last == 'и'){
+                System.out.println("Приветик!"); }
+                else {
+                    System.out.println("Здорова!");
+                }
+            }
+        }
+    }
+
