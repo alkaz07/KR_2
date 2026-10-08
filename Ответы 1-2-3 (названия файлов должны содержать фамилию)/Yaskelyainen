@@ -1,5 +1,5 @@
 Задача 1 - 0135134133155154153
-Задача 2 - 
+Задача 2 - A(15)
 Задача 3
 public class Task3 {
     public static void main(String[] args) {
@@ -17,3 +17,5 @@ public class Task3 {
     }
 
 }
+
+Задача 4 
