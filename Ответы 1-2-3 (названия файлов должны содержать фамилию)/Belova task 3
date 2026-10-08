@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class BelovaTask3 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Как тебя зовут?");
+        String name = sc.nextLine();
+
+        greet(name);
+    }
+
+    private static void greet(String name) {
+        if (name.endsWith("а") || name.endsWith("я") || name.endsWith("и")) {
+            System.out.println("Приветик!");
+        } else {
+            System.out.println("Здарова!");
+        }
+    }
+}
