@@ -1,0 +1,40 @@
+Ответы
+1. 0135134133155154153
+
+2. 121
+   40
+   13
+    4
+    1
+    0
+  202
+   67
+   22
+    7
+    2
+  121
+   40
+   13
+    4
+A(15)
+
+3. Задание
+import java.util.Scanner;
+
+public class GreetingByName {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Как тебя зовут? ");
+        
+        String name = scanner.nextLine().trim();
+
+          if (lowerName.endsWith("а") || lowerName.endsWith("я") || lowerName.endsWith("и")) {
+                System.out.println("Приветик!");
+            } else {
+                System.out.println("Здарова!");
+            }
+       
+}
+
+ 
