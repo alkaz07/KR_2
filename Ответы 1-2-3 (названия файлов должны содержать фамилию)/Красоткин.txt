@@ -1,0 +1,16 @@
+Ответы
+1)
+0135134133155154153
+2)
+121
+202
+121
+A(12)
+
+3)  латинскими буквами нормально, а вот когда сравнение с русскими - не хочет
+        String name = IO.readln("как тебя зовут?");
+        String lastChar = name.substring(name.length()-1);
+        if (lastChar.equals("а") || (lastChar.equals("я"))||
+                (lastChar.equals("и")))
+            IO.println("Приветик");
+        else IO.println("Здарова!");
