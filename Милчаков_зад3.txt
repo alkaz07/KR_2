@@ -1,0 +1,30 @@
+просить пользователя "как тебя зовут?"
+прочитать его имя
+Если имя заканчивается на а, я или и, вывести "Приветик!", иначе вывести "Здарова!"
+___________________________________
+
+import java.util.Scanner;
+
+public class GreetingApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Как тебя зовут? ");
+        String name = scanner.nextLine().trim(); // убрали лишние пробелы
+
+        if (name.isEmpty()) {
+            System.out.println("Ты не ввёл имя!");
+            return;
+        }
+
+        char lastChar = Character.toLowerCase(name.charAt(name.length() - 1));
+
+        if (lastChar == 'а' || lastChar == 'я' || lastChar == 'и') {
+            System.out.println("Приветик!");
+        } else {
+            System.out.println("Здарова!");
+        }
+
+        // scanner.close(); // в простых примерах можно не закрывать
+    }
+}
