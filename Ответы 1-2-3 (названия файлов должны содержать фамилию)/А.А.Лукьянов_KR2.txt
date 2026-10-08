@@ -1,0 +1,83 @@
+== задачка 1 ==
+вывод ожидается:
+    ```
+    0135134133
+    ```
+
+== задачка 2 ==
+вывод ожидается:
+```
+121
+40
+13
+4
+1
+0
+202
+67
+22
+7
+2
+121
+40
+13
+4
+A(12)
+```
+== задачка 3 ==
+```
+static Set<Character> privetikTriggers = Set.of('а', 'я', 'и');
+void main() {
+    IO.println("Как тебя зовут?");
+    String name = IO.readln().trim();
+    char ending = name.charAt(name.length() - 1);
+
+    IO.println(
+            privetikTriggers.contains(ending) ?
+                    "Приветик!" : "Здарова!"
+    );
+}
+```
+== задачка 4 ==
+```
+import java.util.Arrays;
+
+public class Belochka_AL {
+
+    static void main() {
+        Belochka belochka = new Belochka();
+        Derevo derevo = new Derevo();
+        Oreshek[] massivOrekhov = derevo.vyrasitMassivOrekhov(15);
+        belochka.gatherOreshki(massivOrekhov);
+    }
+
+}
+class Oreshek {
+    private final double weight = 12.5;
+
+    public double getWeight() {
+        return weight;
+    }
+}
+
+class Derevo {
+    public Oreshek[] vyrasitMassivOrekhov(int count) {
+        Oreshek[] oreshki = new Oreshek[count];
+        Arrays.setAll(oreshki, _ -> new Oreshek());
+        return oreshki;
+    }
+}
+
+class Belochka {
+    private double totalWeightGathered;
+
+    public void gatherOreshki(Oreshek[] oreshki) {
+        for (Oreshek oreshek : oreshki) {
+            totalWeightGathered += oreshek.getWeight();
+            System.out.println("ура, еще орех!");
+        }
+        System.out.println("Коллеги! Я с гордостью сообщаю, что насобирала орешков общим весом "
+                + totalWeightGathered);
+    }
+}
+```
