@@ -19,3 +19,44 @@ public class Task3 {
 }
 
 Задача 4 
+//класс орех
+public class Nut {
+    final double weight = 12.5;
+    public double getWeight() {
+        return weight;
+    }
+}
+
+//класс дерево
+public class Tree {
+    public static Nut[] growNut(int countNut){
+        Nut[] nuts = new Nut[countNut];
+        for (int i = 0; i < countNut; i++) {
+            nuts[i] = new Nut();
+        }
+        return nuts;
+    }
+}
+
+//класс белочка
+public class Squirrel {
+    public void pickNuts(Nut[] nuts){
+        double total = 0;
+        for (int i = 0; i < nuts.length; i++) {
+            System.out.println("ура, еще орех!");
+            total += nuts[i].getWeight();
+        }
+        System.out.println("Собрала " + total);
+    }
+}
+
+//класс Main
+public class Main {
+    static void main() {
+        Nut[] nuts = Tree.growNut(15);
+        Squirrel squirrel = new Squirrel();
+        squirrel.pickNuts(nuts);
+    }
+}
+
+

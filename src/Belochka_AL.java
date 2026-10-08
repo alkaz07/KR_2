@@ -1,45 +1,3 @@
-== задачка 1 ==
-вывод ожидается:
-    ```
-    0135134133
-    ```
-
-== задачка 2 ==
-вывод ожидается:
-```
-121
-40
-13
-4
-1
-0
-202
-67
-22
-7
-2
-121
-40
-13
-4
-A(12)
-```
-== задачка 3 ==
-```
-static Set<Character> privetikTriggers = Set.of('а', 'я', 'и');
-void main() {
-    IO.println("Как тебя зовут?");
-    String name = IO.readln().trim();
-    char ending = name.charAt(name.length() - 1);
-
-    IO.println(
-            privetikTriggers.contains(ending) ?
-                    "Приветик!" : "Здарова!"
-    );
-}
-```
-== задачка 4 ==
-```
 import java.util.Arrays;
 
 public class Belochka_AL {
@@ -80,4 +38,3 @@ class Belochka {
                 + totalWeightGathered);
     }
 }
-```

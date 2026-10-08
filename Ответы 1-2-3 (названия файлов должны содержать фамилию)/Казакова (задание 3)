@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+ public class task2Kazakova {
+        public static void main(String[] args) {
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Как тебя зовут?");
+            String nameUser = scanner.next();
+
+            choiceOfGreeting(nameUser);
+        }
+
+     private static void choiceOfGreeting(String nameUser) {
+         if (nameUser.endsWith("a") || nameUser.endsWith("я") || nameUser.endsWith("и")) {
+             System.out.println("Приветик!");
+         }
+         else
+         {
+             System.out.println("Здорова!");
+         }
+     }
+
+ }
