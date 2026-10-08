@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class SuvorinTask3 {
     public static void main(String[] args) {
         String name = askName();
-        printName(name);
+        printHello(name);
     }
 
     static String askName() {
@@ -13,7 +13,7 @@ public class SuvorinTask3 {
         return scanner.nextLine();
     }
 
-    static void printName(String name) {
+    static void printHello(String name) {
         char endChar = name.charAt(name.length() - 1);
         switch (endChar) {
             case 'а':
