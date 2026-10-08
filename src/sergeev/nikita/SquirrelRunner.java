@@ -17,7 +17,6 @@ public class SquirrelRunner {
         System.out.println(tree.toString());
         Squirrel squirrel = new Squirrel();
         squirrel.getSumNutsFromArray(tree.getGrowNutArray(15));
-        System.out.println(squirrel.toString());
 
     }
 
