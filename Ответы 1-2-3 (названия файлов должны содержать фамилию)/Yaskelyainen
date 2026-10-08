@@ -1,0 +1,19 @@
+Задача 1 - 0135134133155154153
+Задача 2 - 
+Задача 3
+public class Task3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Как тебя зовут? ");
+        String name = scan.nextLine();
+
+        String last = name.substring(name.length() - 1);
+
+        if (last.equals("а") || last.equals("я") || last.equals("и")) {
+            System.out.println("Приветик!");
+        } else {
+            System.out.println("Здарова!");
+        }
+    }
+
+}
