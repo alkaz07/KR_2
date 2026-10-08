@@ -1,3 +1,4 @@
+package belova;
 import java.util.Scanner;
 
 public class BelovaTask4 {
