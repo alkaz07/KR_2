@@ -1,0 +1,36 @@
+public class SergeevNikitaThreeRunner {
+    //    Спросить пользователя "как тебя зовут?"
+//    прочитать его имя
+//    Если имя заканчивается на а, я или и, вывести "Приветик!", иначе вывести "Здарова!"
+
+    static void main() {
+        String name = IO.readln("как тебя зовут?");
+
+        if (name == null) {
+            throw new NullPointerException("Name не должен быть пустым");
+        }
+
+        String lastLetter = String.valueOf(name.charAt(name.length() - 1));
+
+        if (lastLetter.equals("а") || lastLetter.equals("я") || lastLetter.equals("и")) {
+            System.out.println("Приветик!");
+        } else {
+            System.out.println("Здарова!");
+        }
+    }
+}
+
+//аналитически определить, что выведет программа
+        String x = "0";
+        int y = 10;
+        int z = 3;
+        while (y < 15) {        // начинаем с 10, потом 13
+            y += z;             //  y = 13, 15
+            for (z = 5; z > 2; z--)     // 5 4 3, 5 4 3
+                x = x + y + z;          // сидим в цикле for (0135134133)
+        }
+        System.out.println(x);
+        // так как первое слагаемое - String, то будет постоянная конкатенация строк
+        // (0135134133 - первый цикл) + (155154153 - второй цикл)
+        
+        
