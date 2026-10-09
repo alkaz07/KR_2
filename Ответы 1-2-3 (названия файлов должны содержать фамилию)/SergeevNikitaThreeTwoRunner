@@ -27,7 +27,7 @@ public class SergeevNikitaThreeRunner {
         while (y < 15) {        // начинаем с 10, потом 13
             y += z;             //  y = 13, 15
             for (z = 5; z > 2; z--)     // 5 4 3, 5 4 3
-                x = x + y + z;          // сидим в цикле for 0135134133
+                x = x + y + z;          // сидим в цикле for (0135134133)
         }
         System.out.println(x);
         // так как первое слагаемое - String, то будет постоянная конкатенация строк
