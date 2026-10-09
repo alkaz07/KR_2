@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    static void main() {
+
+        System.out.println("как тебя зовут?");
+
+        String str = new Scanner(System.in).next();
+        char lastCh = str.charAt(str.length() - 1);
+
+ if (lastCh == 'a' || lastCh == 'я' || lastCh == 'и'){
+     System.out.println( "Приветик!");
+
+ }else
+     System.out.println("Здарова!");
+
+    }
+}

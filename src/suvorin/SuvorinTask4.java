@@ -1,3 +1,5 @@
+package suvorin;
+
 public class SuvorinTask4 {
     public static void main(String[] args) {
         Tree tree = new Tree();
@@ -8,7 +10,7 @@ public class SuvorinTask4 {
     }
 }
 
-public class Nut {
+class Nut {
     final float weight;
 
     Nut() {
@@ -16,7 +18,7 @@ public class Nut {
     };
 }
 
-public class Squirrel {
+class Squirrel {
     public void pickNuts(Nut[] array) {
         float finalWeight = 0F;
         for (int i = 0; i < array.length; i++) {
@@ -27,7 +29,7 @@ public class Squirrel {
     }
 }
 
-public class Tree {
+class Tree {
     Nut[] growNutsArray(int nuts) {
         Nut[] nutsArray = new Nut[nuts];
         for (int i = 0; i < nuts; i++) {
