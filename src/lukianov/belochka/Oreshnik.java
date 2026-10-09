@@ -1,4 +1,4 @@
-package belochka_Lukianov;
+package lukianov.belochka;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,9 @@ public class Oreshnik {
     private static final Random genetics = new Random();
     private static final Random weather = new Random();
 
+    /**
+     * Уровень дерева, определяющий максимальный выход орехов за сезон.
+     */
     private int level;
     private final List<Oreshek> oreshki = new ArrayList<>();
 
