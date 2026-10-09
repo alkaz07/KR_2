@@ -1,49 +1,55 @@
 Package Klevchova;
+//public class Klevchova {
 
-//import java.util.concurrent.ThreadLocalRandom;
-public class Klevchova {
-    static void main() {
-
-
+    public static void main() {
 
         BelochkaKl belochkaKl = new BelochkaKl();
         TreeKl treeKl = new TreeKl();
         int kolvo = 15;
-        NutKl[] nutKl = treeKl.nutArrayGrow(kolvo);
-        belochkaKl.countWeightNut(nutArray);
+        //NutArray [] nutArray = treeKl.nutArrayGrow(kolvo);
+
+        belochkaKl.countWeightNut(treeKl.nutArrayGrow(kolvo - 1));
     }
 
-    public class BelochkaKl {
+    public class NutKl {
 
-        void countWeightNut() {
+        public static final double WEIGHT_NUT = 12.5;
+    }
+
+    public static class BelochkaKl {
+        double sumWeight;
+
+        public void countWeightNut(int nutArray[]) {
             double sumWeight = 0;
-            for (int i = 0; i <= nutArray.lenght; ++i) {
+            //int count = 0;
+
+            for (int i = 0; i <= nutArray.length; ++i) {
 
                 System.out.println("ура, еще орех!");
-                sumWeight += nutArray[i].getWEIGHT_NUT();
+
+                sumWeight = sumWeight + NutKl.WEIGHT_NUT;
             }
+
+
             System.out.println("Общий вес собранных орехов: " + sumWeight);
         }
     }
 
-    public class NutKl {
-        private final double WEIGHT_NUT = 12.5;
+public static class TreeKl {
 
-        public double getWEIGHT_NUT() {
-            return WEIGHT_NUT;
+    public int[] nutArrayGrow(int kolvo) {
+        int n=1;
+        int[] nutArray = new int[kolvo];
+        for (int i = 1; i < kolvo; i++) {
+            nutArray[i] = n;
         }
-    }
-    public class TreeKl {     // массив орехов
-        public NutKl[] nutArrayGrow(int kolvo) {
-            NutKl[] nutArray = new NutKl[kolvo];
-            for (int i = 0; i < kolvo; i++) {
-                nutArray[i] = new NutKl();
-            }
-            //ThreadLocalRandom.current().nextInt(2);
+        //ThreadLocalRandom.current().nextInt(2);
 
-            return nutArray;
-        }
+        return nutArray;
     }
 }
+
+
+
 
 
