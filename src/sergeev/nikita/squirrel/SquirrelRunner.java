@@ -1,6 +1,4 @@
-package sergeev.nikita;
-
-import java.util.Arrays;
+package sergeev.nikita.squirrel;
 
 //    Создать класс Орешек с полем вес. Все орешки создаются с весом 12.5. Изменить вес ореха нельзя.
 //    Создать класс Дерево, у которого есть метод ВыраститьМассивОрехов. Параметр метода
@@ -15,7 +13,7 @@ public class SquirrelRunner {
         Tree tree = new Tree();
         Nut[] nuts = tree.getGrowNutArray(15);
         Squirrel squirrel = new Squirrel();
-        squirrel.getSumNutsFromArray(nuts);
+        squirrel.getSumWeightNutsFromArray(nuts);
     }
 }
 

@@ -1,7 +1,7 @@
-package sergeev.nikita;
+package sergeev.nikita.squirrel;
 
 public class Nut {
-    private static final double weight = 12.5;
+    private final double weight = 12.5;
 
     public double getWeight() {
         return weight;

@@ -1,4 +1,4 @@
-package sergeev.nikita;
+package sergeev.nikita.squirrel;
 
 public class Tree {
 

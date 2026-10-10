@@ -1,8 +1,8 @@
-package sergeev.nikita;
+package sergeev.nikita.squirrel;
 
 public class Squirrel {
 
-    public double getSumNutsFromArray(Nut[] arrayNuts) {
+    public double getSumWeightNutsFromArray(Nut[] arrayNuts) {
         double sumWeight = 0;
 
         for (int i = 0; i < arrayNuts.length; i++) {
