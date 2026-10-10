@@ -1,4 +1,4 @@
-package belochka_Lukianov;
+package lukianov.belochka;
 
 import java.util.List;
 import java.util.Random;

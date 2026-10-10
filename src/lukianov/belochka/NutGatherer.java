@@ -1,4 +1,4 @@
-package belochka_Lukianov;
+package lukianov.belochka;
 
 public interface NutGatherer {
     void gatherFromTree(Oreshnik tree);

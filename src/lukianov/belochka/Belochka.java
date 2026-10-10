@@ -1,4 +1,4 @@
-package belochka_Lukianov;
+package lukianov.belochka;
 
 public class Belochka implements NutGatherer {
 
