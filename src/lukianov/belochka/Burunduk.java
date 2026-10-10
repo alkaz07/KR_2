@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class Burunduk implements NutGatherer {
     /**
-     * Фактор судьба, определяющий, какому орешку быть потерянным,
+     * Фактор судьбы, определяющий, какому орешку быть потерянным,
      * а какому доставленным на склад.
      */
     static final private Random fortune = new Random();
