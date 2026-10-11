@@ -1,0 +1,117 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+class Nut {
+    private final double weight;
+    private static final Random RANDOM = new Random();
+
+    public Nut() {
+        this.weight = 1.5 + RANDOM.nextDouble() * (15.0 - 1.5);
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Орех(%.2f г)", weight);
+    }
+}
+
+class Tree {
+    private final List<Nut> nuts = new ArrayList<>();
+    private int level = 1;
+    private static final Random RANDOM = new Random();
+
+    public void levelUp() {
+        level++;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void growNuts() {
+        int maxNuts = level * 5; // например, 5 орехов за уровень
+        int count = 1 + RANDOM.nextInt(maxNuts);
+        for (int i = 0; i < count; i++) {
+            nuts.add(new Nut());
+        }
+        System.out.println("Дерево уровня " + level + " вырастило " + count + " орехов");
+    }
+
+    public List<Nut> getNuts() {
+        return nuts;
+    }
+}
+
+class Squirrel {
+    private int totalCount = 0;
+    private double totalWeight = 0;
+    private final List<Nut> hiddenNuts = new ArrayList<>(); // спрятанные орехи
+
+    public void collectNuts(Tree tree) {
+        List<Nut> nuts = tree.getNuts();
+        for (Nut nut : nuts) {
+            System.out.println("Белочка нашла орех! " + nut);
+            hiddenNuts.add(nut);
+            totalCount++;
+            totalWeight += nut.getWeight();
+        }
+        nuts.clear();
+    }
+
+    public void report() {
+        System.out.printf("Белочка собрала %d орехов, общий вес: %.2f г%n", totalCount, totalWeight);
+        System.out.println("Но где же она их спрятала?.. Она и сама не помнит!");
+    }
+}
+
+class Chipmunk {
+    private int totalCount = 0;
+    private double totalWeight = 0;
+    private final List<Nut> cheeks = new ArrayList<>(); // за щеками
+
+    public void collectNuts(Tree tree) {
+        List<Nut> nuts = tree.getNuts();
+        for (Nut nut : nuts) {
+            System.out.println("Бурундук нашёл орех! " + nut);
+            cheeks.add(nut);
+            totalCount++;
+            totalWeight += nut.getWeight();
+        }
+        nuts.clear();
+    }
+
+    public void report() {
+        System.out.printf("Бурундук собрал %d орехов, общий вес: %.2f г%n", totalCount, totalWeight);
+    }
+
+    // У бурундука орехи всегда с собой - за щеками
+    public List<Nut> getStash() {
+        return cheeks;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Tree tree = new Tree();
+        tree.growNuts();
+        tree.levelUp();
+        tree.growNuts();
+
+        Squirrel squirrel = new Squirrel();
+        squirrel.collectNuts(tree);
+        squirrel.report();
+
+        tree.levelUp();
+        tree.growNuts();
+
+        Chipmunk chipmunk = new Chipmunk();
+        chipmunk.collectNuts(tree);
+        chipmunk.report();
+        System.out.println("У бурундука за щеками: " + chipmunk.getStash().size() + " орехов");
+    }
+}
