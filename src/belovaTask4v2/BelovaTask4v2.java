@@ -1,29 +1,57 @@
 package belovaTask4v2;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class BelovaTask4v2 {
-
     public static void main(String[] args) {
-        Grove grove1 = new Grove();
-        Tree[] groveArray = grove1.createGrove();
-        System.out.println(Arrays.toString(groveArray));
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите количество деревьев: ");
+        int treeCount = scanner.nextInt();
+
+        Grove grove = new Grove();
+        Tree[] trees = grove.createGrove(treeCount);
+
+        System.out.println("В роще " + trees.length + " деревьев");
 
         Squirrel squirrel = new Squirrel();
         Chipmunk chipmunk = new Chipmunk();
+        collectFromTrees(trees, squirrel, chipmunk);
 
+        squirrel.printResults();
+        chipmunk.printResults();
+
+    }
+    private static void collectFromTrees(
+            Tree[] trees,
+            Squirrel squirrel,
+            Chipmunk chipmunk
+    ) {
+        int squirrelTreeCount = trees.length / 2;
+
+        for (int i = 0; i < trees.length; i++) {
+            Tree tree = trees[i];
+
+            System.out.println(
+                    "Дерево " + (i + 1) +
+                            ", уровень " + tree.getLevel() +
+                            ", орехов " + tree.getNuts().size()
+            );
+
+            if (i < squirrelTreeCount) {
+                squirrel.gatherNuts(tree);
+            } else {
+                chipmunk.gatherNuts(tree);
+            }
+        }
     }
 }
 
-class Nut {
+class Nuts {
     private final double weight;
-    private final Random random = new Random();
 
-    public Nut() {
-        weight = 1.5 + Math.random() * 13.5;
+    public Nuts() {
+        double randomWeight = 1.5 + Math.random() * 13.5;
+        weight = Math.round(randomWeight * 100.0) / 100.0;
     }
 
     public double getWeight() {
@@ -32,13 +60,12 @@ class Nut {
 }
 
 class Tree {
-    private int level = 1;
-    private final List<Nut> nuts = new ArrayList<>();
+    private int level;
+    private final List<Nuts> nuts = new ArrayList<>();
     private final Random random = new Random();
 
-    Tree(){
-        level = random.nextInt(3);
-        growNuts();
+    Tree(int level){
+        this.level = level;
     }
 
     public void increaseLevel() {
@@ -50,33 +77,30 @@ class Tree {
     }
 
     public void growNuts() {
-        int count = random.nextInt(level + 1);
+        int maxNuts = 10 * (int) Math.pow(2, level - 1);
+        int count = random.nextInt(maxNuts) + 1;
+
         for (int i = 0; i < count; i++) {
-            nuts.add(new Nut());
+            nuts.add(new Nuts());
         }
     }
 
-    public List<Nut> getNuts() {
-        return List.of(nuts.toArray(new Nut[0]));
-    }
-
-    public List<Nut> takeNuts() {
-        List<Nut> collected = new ArrayList<>(nuts);
-        nuts.clear();
-        return collected;
+    public List<Nuts> getNuts() {
+        return new ArrayList<>(nuts);
     }
 }
 
 class Grove {
-    private final Random random = new Random();
 
-    public Tree[] createGrove() {
-        int countTree = random.nextInt(10);
+    public Tree[] createGrove(int count) {
+        Tree[] grove = new Tree[count];
 
-        Tree[] grove = new Tree[countTree];
-        for (int i = 0; i < countTree; i++) {
-            grove[i] = new Tree();
+        for (int i = 0; i < count; i++) {
+            int level = i + 1;
+            grove[i] = new Tree(level);
+            grove[i].growNuts();
         }
+
         return grove;
     }
 }
@@ -85,8 +109,8 @@ class Squirrel {
     private int gatherCount;
     private double gatherWeight;
 
-    public void gatherNut(Tree tree) {
-        for (Nut nut : tree.takeNuts()) {
+    public void gatherNuts(Tree tree) {
+        for (Nuts nut : tree.getNuts()) {
             gatherCount++;
             gatherWeight += nut.getWeight();
 
@@ -94,7 +118,7 @@ class Squirrel {
         }
     }
 
-    public void printResultsSquirrel() {
+    public void printResults() {
         System.out.println("Белочка собрала " + gatherCount + " штучек орешков");
         System.out.println("Вес орешков белочки " + gatherWeight + " грамм");
     }
@@ -106,7 +130,7 @@ class Chipmunk {
     private double gatherWeight;
 
     public void gatherNuts(Tree tree) {
-        for (Nut nut : tree.takeNuts()) {
+        for (Nuts nut : tree.getNuts()) {
             if (random.nextDouble() < 0.75) {
                 gatherCount++;
                 gatherWeight += nut.getWeight();
@@ -117,7 +141,7 @@ class Chipmunk {
         }
     }
 
-    void printResultChipmunk() {
+    void printResults() {
         System.out.println("У бурундучка на складе " + gatherCount+ " орешков");
         System.out.println("Вес орешков бурундучка " + gatherWeight + " грамм");
     }
