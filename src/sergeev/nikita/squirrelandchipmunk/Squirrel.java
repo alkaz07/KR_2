@@ -12,11 +12,13 @@ public class Squirrel {
     }
 
     public void calculateNuts() {
+        int listNutsSize = tree.getNumberNuts();
+        List<Nut> listNuts = tree.getNuts();
 
-        for (int i = 0; i < tree.getNuts().size(); i++) {
+        for (int i = 0; i < listNutsSize; i++) {
             System.out.println("ура, еще орех!");
             countNuts++;
-            weightNuts = weightNuts + tree.getNuts().get(i).getWeight();
+            weightNuts = weightNuts + listNuts.get(i).getWeight();
         }
 
         System.out.println("Насобирала(в граммах): " + weightNuts);

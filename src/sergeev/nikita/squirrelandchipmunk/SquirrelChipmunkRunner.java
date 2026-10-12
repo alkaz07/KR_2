@@ -19,14 +19,24 @@ package sergeev.nikita.squirrelandchipmunk;
 
 public class SquirrelChipmunkRunner {
     static void main() {
-
         System.out.println(new Nut());
         Tree tree = new Tree();
-        System.out.println(new Tree());
-        tree.getGrowNut();
-        System.out.println(new Tree());
-        Squirrel squirrel = new Squirrel(tree);
-        squirrel.calculateNuts();
+        System.out.println("Пустое дерево: " + tree);
+        tree.getGrowNut(1);
+        System.out.println("Вырастили орех: " + tree);
+        tree.levelUpOfTree();
+        tree.getGrowNut(2);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println("Прокачали дерево и вырастили орехи: " + tree);
+//        Squirrel squirrel = new Squirrel(tree);
+//        squirrel.calculateNuts();
+//        System.out.println(squirrel);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
+        Chipmunk chipmunk= new Chipmunk(tree);
+        System.out.println(chipmunk);
+        chipmunk.transferToStore();
+        chipmunk.calculateNuts();
+
     }
 }
 

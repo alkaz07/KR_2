@@ -8,7 +8,6 @@ public class Tree {
     private static final Random RND = new Random();
     private final List<Nut> listNuts = new ArrayList<>();
     private int levelOfTree = 0;
-    private int numberNuts = 0;
 
     public int getLevelOfTree() {
         return levelOfTree;
@@ -18,9 +17,9 @@ public class Tree {
         levelOfTree = levelOfTree + 1;
     }
 
-    public List<Nut> getGrowNut() {
-        int max = levelOfTree + 1;
-        int sizeOfList = RND.nextInt(max);
+    public List<Nut> getGrowNut(int maxNuts) {
+        listNuts.clear();
+        int sizeOfList = maxNuts + levelOfTree;
 
         for (int i = 0; i < sizeOfList; i++) {
             listNuts.add(new Nut());
@@ -30,8 +29,7 @@ public class Tree {
     }
 
     public int getNumberNuts() {
-        numberNuts = listNuts.size();
-        return numberNuts;
+        return listNuts.size();
     }
 
     public List<Nut> getNuts() {
@@ -42,7 +40,7 @@ public class Tree {
     public String toString() {
         return "Tree{" +
                 "levelOfTree= " + levelOfTree +
-                ", numberNuts= " + numberNuts +
+                ", numberNuts= " + listNuts.size() +
                 ", listNuts= " + listNuts +
                 '}';
     }
