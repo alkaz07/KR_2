@@ -41,7 +41,7 @@ public class Tree {
         return "Tree{" +
                 "levelOfTree= " + levelOfTree +
                 ", numberNuts= " + listNuts.size() +
-                ", listNuts= " + listNuts +
+                ", listNuts= " + listNuts.size() +
                 '}';
     }
 }

@@ -12,6 +12,8 @@ public class Squirrel {
     }
 
     public void calculateNuts() {
+        countNuts = 0;
+        weightNuts = 0;
         int listNutsSize = tree.getNumberNuts();
         List<Nut> listNuts = tree.getNuts();
 
@@ -38,7 +40,7 @@ public class Squirrel {
         return "Squirrel{" +
                 "tree=" + tree +
                 ", countNuts=" + countNuts +
-                ", weightNuts=" + weightNuts +
+                ", weightNuts=" + String.format("%.2f", weightNuts) +
                 '}';
     }
 }

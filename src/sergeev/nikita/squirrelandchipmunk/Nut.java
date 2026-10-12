@@ -16,8 +16,6 @@ public class Nut {
 
     @Override
     public String toString() {
-        return "Nut{" +
-                "weight=" + weight +
-                '}';
+        return String.format("Nut{weight=%.2f}", weight);
     }
 }

@@ -17,19 +17,22 @@ public class Chipmunk {
 
     public void transferToStore() {
         storageListNuts.clear();
+        List<Nut> listNuts = tree.getNuts();
 
-        for (int i = 0; i < tree.getNuts().size(); i++) {
+        for (int i = 0; i < listNuts.size(); i++) {
             if (RND.nextDouble() < 0.75) {
-                storageListNuts.add(tree.getNuts().get(i));
+                storageListNuts.add(listNuts.get(i));
             }
         }
     }
 
     public void calculateNuts() {
+        countNuts = 0;
+        weightNuts = 0;
 
         for (int i = 0; i < storageListNuts.size(); i++) {
             countNuts++;
-            weightNuts = weightNuts + tree.getNuts().get(i).getWeight();
+            weightNuts = weightNuts + storageListNuts.get(i).getWeight();
         }
 
         System.out.println("На складе(в граммах): " + weightNuts);
@@ -48,9 +51,9 @@ public class Chipmunk {
     public String toString() {
         return "Chipmunk{" +
                 "tree=" + tree +
-                ", countNuts=" + countNuts +
-                ", weightNuts=" + weightNuts +
                 ", storageListNuts=" + storageListNuts +
+                ", countNuts=" + countNuts +
+                ", weightNuts=" + String.format("%.2f", weightNuts) +
                 '}';
     }
 }
