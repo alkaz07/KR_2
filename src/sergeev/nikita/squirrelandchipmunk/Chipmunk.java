@@ -5,37 +5,25 @@ import java.util.List;
 import java.util.Random;
 
 public class Chipmunk {
-    private final Tree tree;
     private static final Random RND = new Random();
     private int countNuts = 0;
     private double weightNuts = 0;
     private final List<Nut> storageListNuts = new ArrayList<>();
 
-    public Chipmunk(Tree tree) {
-        this.tree = tree;
-    }
-
-    public void transferToStore() {
-        storageListNuts.clear();
+    public void transferToStore(Tree tree) {
         List<Nut> listNuts = tree.getNuts();
 
         for (int i = 0; i < listNuts.size(); i++) {
+            Nut nut = listNuts.get(i);
+
             if (RND.nextDouble() < 0.75) {
                 storageListNuts.add(listNuts.get(i));
+                countNuts++;
+                weightNuts = weightNuts + nut.getWeight();
             }
         }
-    }
 
-    public void calculateNuts() {
-        countNuts = 0;
-        weightNuts = 0;
-
-        for (int i = 0; i < storageListNuts.size(); i++) {
-            countNuts++;
-            weightNuts = weightNuts + storageListNuts.get(i).getWeight();
-        }
-
-        System.out.println("На складе(в граммах): " + weightNuts);
+        System.out.printf("На складе(в граммах): %.2f%n", weightNuts);
         System.out.println("На складе(в штуках): " + countNuts);
     }
 
@@ -47,12 +35,16 @@ public class Chipmunk {
         return countNuts;
     }
 
+    public void resetCount() {
+        storageListNuts.clear();
+        countNuts = 0;
+        weightNuts = 0;
+    }
+
     @Override
     public String toString() {
         return "Chipmunk{" +
-                "tree=" + tree +
-                ", storageListNuts=" + storageListNuts +
-                ", countNuts=" + countNuts +
+                "countNuts=" + countNuts +
                 ", weightNuts=" + String.format("%.2f", weightNuts) +
                 '}';
     }

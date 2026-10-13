@@ -21,40 +21,29 @@ import java.util.List;
 
 public class SquirrelChipmunkRunner {
     static void main() {
-        System.out.println(new Nut());
-        Tree tree = new Tree();
-        System.out.println("Пустое дерево: " + tree);
-
-        tree.getGrowNut(1);
-
-        System.out.println("Вырастили орех: " + tree);
-        tree.levelUpOfTree();
-
-        tree.getGrowNut(2);
-
-        System.out.println("Прокачали дерево и вырастили орехи: " + tree);
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("=============Squirrel=========");
-        Squirrel squirrel = new Squirrel(tree);
-        squirrel.calculateNuts();
-        System.out.println(squirrel);
-        System.out.println("=============Chipmunk=========");
-        Chipmunk chipmunk = new Chipmunk(tree);
-        chipmunk.transferToStore();
-        chipmunk.calculateNuts();
-        System.out.println(chipmunk);
-        System.out.println("=============Grove=========");
+        Squirrel squirrel = new Squirrel();
+        Chipmunk chipmunk = new Chipmunk();
         Grove grove = new Grove();
+
         List<Tree> treeList = grove.getListGrove(5);
+        squirrel.resetCount();
+        chipmunk.resetCount();
 
         for (int i = 0; i < treeList.size(); i++) {
-            if (i % 2 != 0 || i == 0) {
-                squirrel.calculateNuts();
+            Tree treeFromList = treeList.get(i);
+
+            if (i % 2 == 0) {
+                System.out.println("SQUIRREL. Tree №: " + i);
+                squirrel.calculateNuts(treeFromList);
             } else {
-                chipmunk.transferToStore();
-                chipmunk.calculateNuts();
+                System.out.println("CHIPMUNK. Tree №: " + i);
+                chipmunk.transferToStore(treeFromList);
             }
         }
+        System.out.println("+++++++++++++++++TOTAL+++++++++++++++++++++++++++");
+        System.out.println("SQUIRREL: " + squirrel);
+        System.out.println("CHIPMUNK: " + chipmunk);
+
     }
 }
 
