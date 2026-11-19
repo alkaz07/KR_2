@@ -1,45 +1,16 @@
 package gubanov.squirrel.hard;
 
-public class Squirrel
+public class Squirrel extends NutGatherer
 {
-  private int nutCount;
-  private double totalNutWeight;
-
-  public Squirrel()
-  {
-    nutCount = 0;
-    totalNutWeight = 0;
-  }
-
   private void scream()
   {
     System.out.println("Ура, еще орех!");
   }
 
-  public void gatherHarvest(Tree tree)
+  @Override
+  public void collectNut(Nut nut)
   {
-    while (tree.hasNuts())
-    {
-      Nut nut = tree.gatherNut();
-      if (nut == null)
-      {
-        // Unexpected
-        return;
-      }
-
-      scream();
-      nutCount++;
-      totalNutWeight += nut.getWeight();
-    }
-  }
-
-  public int getNutCount()
-  {
-    return nutCount;
-  }
-
-  public double getTotalNutWeight()
-  {
-    return totalNutWeight;
+    scream();
+    updateCollectedNutStatistics(nut);
   }
 }
