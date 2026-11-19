@@ -2,8 +2,8 @@ package gubanov.squirrel.hard;
 
 public abstract class NutGatherer
 {
-  private int nutCount;
-  private double totalNutWeight;
+  private int collectedNutCount;
+  private double totalCollectedNutWeight;
 
   public void gatherHarvest(Tree tree)
   {
@@ -19,19 +19,19 @@ public abstract class NutGatherer
 
   public abstract void collectNut(Nut nut);
 
-  public void updateNutStatistics(Nut nut)
+  public void updateCollectedNutStatistics(Nut nut)
   {
-    nutCount++;
-    totalNutWeight += nut.getWeight();
+    collectedNutCount++;
+    totalCollectedNutWeight += nut.getWeight();
   }
 
-  public int getNutCount()
+  public int getCollectedNutCount()
   {
-    return nutCount;
+    return collectedNutCount;
   }
 
-  public double getTotalNutWeight()
+  public double getTotalCollectedNutWeight()
   {
-    return totalNutWeight;
+    return totalCollectedNutWeight;
   }
 }

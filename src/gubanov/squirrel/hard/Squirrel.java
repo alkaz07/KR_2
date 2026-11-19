@@ -11,6 +11,6 @@ public class Squirrel extends NutGatherer
   public void collectNut(Nut nut)
   {
     scream();
-    updateNutStatistics(nut);
+    updateCollectedNutStatistics(nut);
   }
 }
