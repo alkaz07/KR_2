@@ -18,12 +18,12 @@ public class Tree
     level++;
   }
 
-  public List<Nut> growNuts()
+  public ArrayList<Nut> growNuts()
   {
     Random random = new Random();
-    int nutCount = random.nextInt(1, level);
+    int nutCount = random.nextInt(1, level + 1);
 
-    List<Nut> nuts = new ArrayList<>(nutCount);
+    ArrayList<Nut> nuts = new ArrayList<>(nutCount);
     for (int i = 0; i < nutCount; i++)
     {
       nuts.add(new Nut());
