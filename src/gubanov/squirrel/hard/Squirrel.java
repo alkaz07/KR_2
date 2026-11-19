@@ -16,18 +16,21 @@ public class Squirrel
     System.out.println("Ура, еще орех!");
   }
 
-  public void gatherNut(Tree tree)
+  public void gatherHarvest(Tree tree)
   {
-    Nut nut = tree.gatherNut();
-    if (nut == null)
+    while (tree.hasNuts())
     {
-      // Empty tree
-      return;
-    }
+      Nut nut = tree.gatherNut();
+      if (nut == null)
+      {
+        // Unexpected
+        return;
+      }
 
-    scream();
-    nutCount++;
-    totalNutWeight += nut.getWeight();
+      scream();
+      nutCount++;
+      totalNutWeight += nut.getWeight();
+    }
   }
 
   public int getNutCount()

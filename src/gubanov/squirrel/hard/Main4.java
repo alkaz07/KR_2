@@ -11,6 +11,8 @@ public class Main4
     tree.growNuts();
 
     Squirrel squirrel = new Squirrel();
-    squirrel.gatherNut(tree);
+    squirrel.gatherHarvest(tree);
+
+    System.out.printf("Количество орехов = %d, суммарный вес = %.1f", squirrel.getNutCount(), squirrel.getTotalNutWeight());
   }
 }

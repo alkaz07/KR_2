@@ -38,10 +38,14 @@ public class Tree
     return nuts;
   }
 
+  public boolean hasNuts()
+  {
+    return !nuts.isEmpty();
+  }
+
   public Nut gatherNut()
   {
-    int nutCount = nuts.size();
-    if (nutCount == 0)
+    if (!hasNuts())
     {
       return null;
     }
