@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Main4Extended {
     public static void main(String[] args) {
-        // Выращиваем небольшую рощу из 5 деревьев разного уровня
+        // Выращиваем рощу из 5 деревьев разного уровня
         List<TreeExt> grove = new ArrayList<>();
         grove.add(new TreeExt(1));
         grove.add(new TreeExt(4));
@@ -21,7 +21,7 @@ public class Main4Extended {
             tree.growNutsExt();
         }
 
-        // Повысим уровень первому дереву для проверки метода
+        // Повысим уровень 1-му дереву для проверки метода
         grove.get(0).levelUpExt();
         grove.get(0).growNutsExt();
 
