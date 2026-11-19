@@ -1,4 +1,4 @@
-package Gubanov;
+package gubanov;
 
 import java.util.Scanner;
 
