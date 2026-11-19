@@ -9,8 +9,5 @@ public class Main3 {
         } else {
             IO.println("Здарова!");
         }
-        System.out.println("Символ: " + name.charAt(name.length() - 1));
-        System.out.println("Код символа: " + (int) name.charAt(name.length() - 1));
-        System.out.println("Ожидаемый код: " + (int) 'а');
     }
 }
