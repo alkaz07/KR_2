@@ -10,11 +10,7 @@ public class Main4
     Tree tree = new Tree(3);
     tree.growNuts();
 
-    Nut nut = tree.gatherNut();
-    while (nut != null)
-    {
-      System.out.println(nut.getWeight());
-      nut = tree.gatherNut();
-    }
+    Squirrel squirrel = new Squirrel();
+    squirrel.gatherNut(tree);
   }
 }
