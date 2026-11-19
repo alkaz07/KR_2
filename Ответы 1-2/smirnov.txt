@@ -1,0 +1,68 @@
+1) 0135134133165164163
+
+String x ="0";
+int y = 10;
+int z = 3;
+while (y < 15)
+{
+ 	y +=z;	// 13 16
+	for(z =5; z > 2; z--)
+   		x = x + y +z;  // "0135" "0135134" "0135134133"
+                       // "0135134133165" "0135134133165164" "0135134133165164163"
+}
+System.out.println(x);
+
+
+2)
+
+121
+201
+121
+A(12)
+
+
+public class Test2{
+    public static void recFunc(int x, A a)
+    {
+        a.inc();
+        if(x<100) recFunc(x*3+1, a);
+        System.out.println(x);
+    }
+
+    public static void main (String[] args)
+    {
+        A o = new A();
+        for(int i=0; i<5; i+=2)
+            recFunc(i, o);
+            // i = 0
+            // x = 0 counter = 1
+            // x = 1 counter = 2
+            // x = 4 counter = 3
+            // x = 13 counter = 4
+            // x = 40 counter = 5
+            // x = 121 не увеличиваем counter
+
+            // i = 2
+            // x = 2 counter = 6
+            // x = 7 counter = 7
+            // x = 22 counter = 8
+            // x = 67 counter = 9
+            // x = 201 не увеличиваем counter
+
+            // i = 4
+            // x = 4 counter = 10
+            // x = 13 сounter = 11
+            // x = 40 counter = 12
+            // x = 121 не увеличиваем counter
+
+
+        System.out.println(o);
+    }
+}
+class A{
+    private int counter;
+    public A() {counter = 0;}
+    public void inc() {counter++;}
+    public String toString()
+    { return "A("+counter+")";}
+}
