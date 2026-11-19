@@ -1,4 +1,6 @@
-package Gubanov;
+package gubanov;
+
+import gubanov.squirrel.Nut;
 
 import java.util.Scanner;
 
@@ -33,5 +35,19 @@ public class Main3
   {
     String sayHello = isNameLastLetterSpecific ? "Приветик!" : "Здарова!";
     System.out.println(sayHello);
+  }
+
+  public static class Tree
+  {
+    public Nut[] growNutArray(int nutCount)
+    {
+      Nut[] nuts = new Nut[nutCount];
+      for (int i = 0; i < nutCount; i++)
+      {
+        nuts[i] = new Nut();
+      }
+
+      return nuts;
+    }
   }
 }
