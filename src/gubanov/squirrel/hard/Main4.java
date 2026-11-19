@@ -11,7 +11,7 @@ public class Main4
     final int MAX_TREE_LEVEL = 10;
 
     Random random = new Random();
-    int treeNumber = random.nextInt(5, 10);
+    int treeNumber = random.nextInt(4, 10);
     Tree[] wood = new Tree[treeNumber];
 
     for (int i = 0; i < treeNumber; i++)
@@ -22,6 +22,8 @@ public class Main4
       tree.growNuts();
       wood[i] = tree;
     }
+
+    System.out.printf("Размер рощи = %d деревьев\n", treeNumber);
 
     // First half of the wood is gathered by a squirrel
     int halfAWood = treeNumber / 2;
@@ -41,7 +43,6 @@ public class Main4
       chipmunk.gatherHarvest(tree);
     }
 
-    System.out.printf("Размер рощи = %d деревьев\n", treeNumber);
     System.out.printf("Белка: количество собранных орехов = %d, суммарный вес = %.1f граммов\n", squirrel.getCollectedNutCount(), squirrel.getTotalCollectedNutWeight());
     System.out.printf("Бурундук: количество сорванных орехов = %d, количество сохранённых орехов = %d, суммарный вес сохранённых орехов= %.1f граммов\n",
       chipmunk.getGatheredNutCount(), chipmunk.getCollectedNutCount(), chipmunk.getTotalCollectedNutWeight());

@@ -7,7 +7,7 @@ import java.util.Random;
 public class Tree
 {
   private int level;
-  ArrayList<Nut> nuts;
+  private ArrayList<Nut> nuts;
 
   public Tree(int level)
   {
@@ -33,26 +33,23 @@ public class Tree
     raiseLevel();
   }
 
-  public ArrayList<Nut> getNuts()
+  public int getNutCount()
   {
-    return nuts;
+    return nuts.size();
   }
 
   public boolean hasNuts()
   {
-    return !nuts.isEmpty();
+    return getNutCount() > 0;
   }
 
-  public Nut gatherNut()
+  public Nut getNut(int index)
   {
-    if (!hasNuts())
-    {
-      return null;
-    }
-
-    Random random = new Random();
-    int index = random.nextInt(0, nuts.size());
-
     return nuts.remove(index);
+  }
+
+  public ArrayList<Nut> getNuts()
+  {
+    return nuts;
   }
 }
