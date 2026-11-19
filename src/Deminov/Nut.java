@@ -1,9 +1,9 @@
 package Deminov;
 
 public class Nut {
-    private static final double nutWeight = 12.5;
+    private static final double NUT_WEIGHT = 12.5;
 
     public double getNutWeight() {
-        return nutWeight;
+        return NUT_WEIGHT;
     }
 }
