@@ -1,3 +1,5 @@
+package Angela_KR2_3;
+
 import java.util.Scanner;
 
 public class Main {
