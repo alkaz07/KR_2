@@ -1,4 +1,4 @@
-package SergeyByul;
+package sergeyByul;
 
 import java.util.Scanner;
 
