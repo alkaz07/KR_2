@@ -7,11 +7,12 @@ import java.util.Scanner;
 public class Belochki {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Введите количество найденных орехов");
-        int qty = input.nextInt();
+        //System.out.println("Введите количество найденных орехов");
+        //int qty = input.nextInt();
 
-        //System.out.println("Средний вес ореха" + Nut(weight));
-        //System.out.println("Количество деревьев:" + Arrays.toString(groveNuts);
+        System.out.println("Средний вес ореха" + Nut(weight));
+        System.out.println("Количество орехов:" + Arrays.toString(groveNuts));
+        System.out.println("общий вес орехов:" + (weight * groveNuts);
     }
 }
 
@@ -32,7 +33,14 @@ class NutTree {
 }
 
 class Belochka {
-    public static void nutHurvest(int groveNuts) {
+    public static int[] nutHurvest(int groveNuts, double weight) {
+        int[] nuts = new int[groveNuts];
+        Random random = new Random();
+        for (int i = 0; i < nuts; i++) {
+            nuts[i] = random.nextInt(10);
+        }
+        System.out.println("Ура еще орешек!:" + Arrays.toString(nuts));
+        return nuts;
 
     }
 }
