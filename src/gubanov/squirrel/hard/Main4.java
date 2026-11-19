@@ -7,13 +7,14 @@ public class Main4
 {
   public static void main()
   {
-    Tree tree = new Tree(2);
+    Tree tree = new Tree(3);
     tree.growNuts();
-    ArrayList<Nut> nuts = tree.getNuts();
 
-    for (Nut nut : nuts)
+    Nut nut = tree.gatherNut();
+    while (nut != null)
     {
       System.out.println(nut.getWeight());
+      nut = tree.gatherNut();
     }
   }
 }
