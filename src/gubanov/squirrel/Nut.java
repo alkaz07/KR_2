@@ -1,4 +1,4 @@
-package gubanov_Squirrel;
+package gubanov.squirrel;
 
 public class Nut
 {
