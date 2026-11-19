@@ -1,0 +1,29 @@
+//аналитически определить, что выведет программа
+
+public class Test2{
+    public static void recFunc(int x, A a)
+    {
+        a.inc();
+        if(x<100) recFunc(x*3+1, a);
+        System.out.println(x);                     //выводит x
+    }
+
+    public static void main (String[] args)
+    {
+        A o = new A();                             //
+        for(int i=0; i<5; i+=2)
+            recFunc(i, o);                         //
+
+        System.out.println(o);                      //выводит o
+    }
+}
+class A{                                        //не понятный класс
+    private int counter;                        //не понятно чего делает
+    public A() {counter = 0;}                   //метод отсутствует
+    public void inc() {counter++;}              //метод отсутствует
+    public String toString()
+    { return "A("+counter+")";}           //возвращает текст: "А()" с каким-то
+                                         //числом в скобках
+}
+
+Результат: программа ничего не выведет, запнется на букве А
