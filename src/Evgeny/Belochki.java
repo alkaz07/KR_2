@@ -1,33 +1,41 @@
 package Evgeny;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Belochki {
-    public static void main(String args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите количество найденных орехов");
         int qty = input.nextInt();
 
-        System.out.println("Средний вес ореха"+weigth.Nut);
-
-        System.out.println("Количество деревьев:" +groveNuts.NutTree);
+        //System.out.println("Средний вес ореха" + Nut(weight));
+        //System.out.println("Количество деревьев:" + Arrays.toString(groveNuts);
     }
 }
 
 class Nut {
-double weight =12.5;
-        }
+    double weight = 12.5;
+}
 
 class NutTree {
-public static int growGroveNutTrees(int qty) {
-    int groveNuts=qty;
-    return groveNuts;
-}
+    public static int[] growGroveNutTrees(int qty) {
+        int[] groveNuts = new int[qty];
+        Random random = new Random();
+        for (int i = 0; i < qty; i++) {
+            groveNuts[i] = random.nextInt(10);
         }
+        System.out.println("Количество деревьев:" + Arrays.toString(groveNuts));
+        return groveNuts;
+    }
+}
 
 class Belochka {
-public static void nutHurvest (int groveNuts, ) {
+    public static void nutHurvest(int groveNuts) {
 
+    }
 }
-        }
 
 /*
 Создать класс Орешек с полем вес. Все орешки создаются с весом 12.5. Изменить вес ореха нельзя.
