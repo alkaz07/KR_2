@@ -29,6 +29,7 @@ public class Tree
       nuts.add(new Nut());
     }
 
+    raiseLevel();
     return nuts;
   }
 }
