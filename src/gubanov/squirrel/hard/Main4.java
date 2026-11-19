@@ -8,11 +8,12 @@ public class Main4
   public static void main()
   {
     Tree tree = new Tree(2);
-    ArrayList<Nut> nuts = tree.growNuts();
+    tree.growNuts();
+    ArrayList<Nut> nuts = tree.getNuts();
 
-    for (int i = 0; i < nuts.size(); i++)
+    for (Nut nut : nuts)
     {
-      System.out.println(nuts.get(i).getWeight());
+      System.out.println(nut.getWeight());
     }
   }
 }
