@@ -12,7 +12,7 @@ public class Belochki {
 
         System.out.println("Средний вес ореха" + Nut(weight));
         System.out.println("Количество орехов:" + Arrays.toString(groveNuts));
-        System.out.println("общий вес орехов:" + (weight * groveNuts);
+        System.out.println("общий вес орехов:" + (weight * groveNuts));
     }
 }
 

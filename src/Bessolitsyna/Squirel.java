@@ -9,7 +9,11 @@ public class Squirel {
             totalWeight = totalWeight + nut.getWeightNut();
             System.out.println("ура, еще орех!");
         }
-        System.out.println("теперь " + totalWeight + "кг");
+        System.out.println("теперь " + totalWeight + " граммов");
+    }
+
+    public void showResults() {
+
     }
 }
 

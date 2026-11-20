@@ -9,7 +9,7 @@ package Bessolitsyna;
 //Продемонстрировать работу системы с 1 объектом класса Белочка, 1 Деревом и массивом из 15 орехов.
 public class Zadacha4 {
     public static void main(String[] args) {
-        Tree tree = new Tree();
+          Tree tree = new Tree();
         Squirel squirel = new Squirel();
         Nut[] myNuts = tree.growNutArray(15);
         squirel.collectNuts(myNuts);

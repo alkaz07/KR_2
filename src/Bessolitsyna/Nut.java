@@ -1,11 +1,11 @@
 package Bessolitsyna;
 
 public class Nut {
-    final double weightNut = 12.5;
+    double weightNut = 12.5;
 
-        public double getWeightNut() {
+    public double getWeightNut() {
 
-            return weightNut;
-        }
+        return weightNut;
+    }
 
 }
